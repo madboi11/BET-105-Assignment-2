@@ -40,7 +40,7 @@ ks: [5, 10, 25, 50, 100, 200, 1000, 2000]   # draw sizes to test
 ├── README.md
 ├── scripts/
 │   ├── sample.py       # draws k values from [1..num] and saves the mean
-│   └── plot_lln.py     # aggregates all means into a TSV and generates the boxplot
+│   └── plot.py     # aggregates all means into a TSV and generates the boxplot
 └── results/
     ├── samples/        # one .txt file per (num, k, repeat) combination
     ├── nNUM_means.tsv  # aggregated results with columns: k, mean
