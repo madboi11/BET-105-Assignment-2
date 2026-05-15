@@ -28,7 +28,7 @@ To change parameters, edit `config.yaml` before running.
 ```yaml
 num: 1000          # upper bound of the range [1, num]
 repeats: 10        # number of repeated draws per k value
-ks: [5, 10, 25, 50, 100, 200, 1000, 5000]   # draw sizes to test
+ks: [5, 10, 25, 50, 100, 200, 1000, 2000]   # draw sizes to test
 ```
 
 ## File Structure
