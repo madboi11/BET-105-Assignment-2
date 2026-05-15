@@ -46,10 +46,3 @@ ks: [5, 10, 25, 50, 100, 200, 1000, 5000]   # draw sizes to test
     └── plots/
         └── lln_nNUM.png
 ```
-
-## Pipeline DAG
-
-```
-sample (80 jobs, one per k×repeat, runs in parallel)
-    └── plot (aggregates all means → writes TSV → generates boxplot)
-```
