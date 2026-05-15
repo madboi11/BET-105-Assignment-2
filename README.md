@@ -1,0 +1,55 @@
+# Law of Large Numbers – Snakemake Pipeline
+
+This pipeline demonstrates the Law of Large Numbers graphically. Given a range **1 to n**, we repeatedly draw **k** values and compute their mean. As k increases, the sample mean converges to the true mean **(n + 1) / 2**. The experiment is repeated 10 times per k value and the distribution of means is shown as a boxplot.
+
+## Example Output
+
+![Example plot](Example_2000.png)
+
+## Requirements
+
+```
+conda create -n snakemake -c conda-forge -c bioconda snakemake
+conda activate snakemake
+conda install numpy matplotlib scipy
+```
+
+## How to Run
+
+```
+snakemake --cores 4
+```
+
+To change parameters, edit `config.yaml` before running.
+
+## Configuration
+
+```yaml
+num: 1000          # upper bound of the range [1, num]
+repeats: 10        # number of repeated draws per k value
+ks: [5, 10, 25, 50, 100, 200, 1000, 5000]   # draw sizes to test
+```
+
+## File Structure
+
+```
+.
+├── Snakefile
+├── config.yaml
+├── README.md
+├── scripts/
+│   ├── sample.py       # draws k values from [1..num] and saves the mean
+│   └── plot_lln.py     # aggregates all means into a TSV and generates the boxplot
+└── results/
+    ├── samples/        # one .txt file per (num, k, repeat) combination
+    ├── nNUM_means.tsv  # aggregated results with columns: k, mean
+    └── plots/
+        └── lln_nNUM.png
+```
+
+## Pipeline DAG
+
+```
+sample (80 jobs, one per k×repeat, runs in parallel)
+    └── plot (aggregates all means → writes TSV → generates boxplot)
+```
