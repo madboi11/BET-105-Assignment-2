@@ -11,7 +11,7 @@ This pipeline demonstrates the Law of Large Numbers graphically. Given a range *
 ```
 conda create -n snakemake -c conda-forge -c bioconda snakemake
 conda activate snakemake
-conda install numpy matplotlib scipy
+conda install matplotlib
 ```
 
 ## How to Run
