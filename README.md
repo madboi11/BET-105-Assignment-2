@@ -4,7 +4,8 @@ This pipeline demonstrates the Law of Large Numbers graphically. Given a range *
 
 ## Example Output
 
-![Example plot](Example_2000.png)
+<img width="1200" height="500" alt="lln_n1000" src="https://github.com/user-attachments/assets/120548a6-e6ea-4391-add8-cd931748ea0e" />
+
 
 ## Requirements
 
